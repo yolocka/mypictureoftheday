@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyPictureOfTheDay</string>
+    <string name="search_wiki">Найти в Википедии</string>
+    <string name="wiki_helper_text">Найдите термин в Википедии</string>
+    <string name="bottom_sheet_headline_text">Explanation</string>
+    <string name="settings">Настойки</string>
+    <string name="first">Первый</string>
+</resources>
