@@ -1,13 +1,14 @@
 package com.example.mypictureoftheday.view
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
@@ -22,8 +23,27 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
+    private val sharedPref: SharedPreferences by lazy {
+        getSharedPreferences(SHAR_PREF_NAME, Context.MODE_PRIVATE)
+    }
+    private val editor: SharedPreferences.Editor by lazy {
+        sharedPref.edit()
+    }
+
+
+    companion object {
+        const val PREF_THEME = "app_theme"
+        const val IS_CHANGED = "is_changed"
+        const val SHAR_PREF_NAME = "my_pref"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        when (sharedPref.getString(PREF_THEME, "")) {
+            "Слива" -> setTheme(R.style.PlumTheme)
+            "Мята" -> setTheme(R.style.MintTheme)
+            "Апельсин" -> setTheme(R.style.OrangeTheme)
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
@@ -41,6 +61,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (sharedPref.getBoolean(IS_CHANGED, false)) {
+            editor.let {
+                editor.putBoolean(IS_CHANGED, false)
+                editor.apply()
+            }
+            recreate()
+        }
+    }
+
+
     private fun setBottomAppBar() {
         setSupportActionBar(findViewById(R.id.bottom_bar))
         bottom_bar.navigationIcon =
@@ -54,7 +86,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.item_settings -> Toast.makeText(this, R.string.settings, Toast.LENGTH_LONG).show()
+            R.id.item_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+            }
             android.R.id.home -> {
                 BottomNavigationFragment().show(supportFragmentManager, "tag")
             }

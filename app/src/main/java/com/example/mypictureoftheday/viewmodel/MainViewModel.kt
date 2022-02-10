@@ -23,7 +23,7 @@ class MainViewModel(
     private fun sendServerRequest() {
         liveDataForViewObserve.value = PictureData.Loading(null)
 
-        val apiKey : String = BuildConfig.API_KEY
+        val apiKey : String = BuildConfig.NASA_API_KEY
 
         if (apiKey.isBlank()) {
             PictureData.Error(Throwable("нет API ключа"))
