@@ -7,8 +7,10 @@ import com.example.mypictureoftheday.model.DataLoader
 import com.example.mypictureoftheday.model.PictureData
 import java.time.LocalDate
 
-class MainViewModel : ViewModel() {
+class YesterdayFragmentViewModel : ViewModel() {
+    private val now: LocalDate = LocalDate.now()
     fun getData() : LiveData<PictureData> {
-        return DataLoader().getData(LocalDate.now())
+        val yesterday = now.minusDays(1)
+        return DataLoader().getData(yesterday)
     }
 }

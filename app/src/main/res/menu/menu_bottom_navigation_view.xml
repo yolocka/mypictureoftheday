@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_view_yesterday"
+        android:icon="@drawable/ic_baseline_looks_one_24"
+        android:title="@string/yesterday" />
+
+    <item
+        android:id="@+id/bottom_view_two_days_ago"
+        android:icon="@drawable/ic_baseline_looks_two_24"
+        android:title="@string/two_days_ago" />
+
+    <item
+        android:id="@+id/bottom_view_three_days_ago"
+        android:icon="@drawable/ic_baseline_looks_3_24"
+        android:title="@string/three_days_ago" />
+</menu>
