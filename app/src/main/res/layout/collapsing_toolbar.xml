@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_layout_height"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/main_collapsing"
+            style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:toolbarId="@id/main_toolbar">
+
+            <com.example.mypictureoftheday.view.MyImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/ic_baseline_downloading_24"
+                app:layout_collapseMode="parallax"/>
+
+            <WebView
+                android:id="@+id/video_web_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/web_video_view_height"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/main_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom"
+                app:layout_collapseMode="pin">
+                <TextView
+                    android:id="@+id/collapsing_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tool_bar_text_size"
+                    android:lineSpacingExtra="@dimen/tool_bar_line_spacing_extra"
+                    android:textStyle="bold"
+                    android:padding="@dimen/main_app_padding"/>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/collapsing_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/main_activity_scrolling_text_size"
+            android:lineSpacingExtra="@dimen/main_activity_scrolling_line_spacing_extra"
+            android:text="@string/download"
+            android:padding="@dimen/main_app_padding"/>
+    </androidx.core.widget.NestedScrollView>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/bottom_navigation_marginStart"
+        android:src="@drawable/ic_baseline_looks_3_24"
+        app:layout_anchor="@id/main_appbar"
+        app:layout_anchorGravity="bottom|right|end"/>-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

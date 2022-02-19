@@ -1,5 +1,6 @@
 package com.example.mypictureoftheday.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -9,8 +10,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.webkit.WebChromeClient
+import android.webkit.WebSettings
+import android.webkit.WebViewClient
 import android.widget.TextView
-import android.widget.VideoView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
@@ -22,7 +25,7 @@ import com.example.mypictureoftheday.view.archive.ArchiveActivity
 import com.example.mypictureoftheday.viewmodel.MainViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_yesterday.*
+import kotlinx.android.synthetic.main.collapsing_toolbar.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
@@ -58,15 +61,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.getData().observe(this, Observer<PictureData> { renderData(it) })
 
-        setBottomSheetBehavior(findViewById(R.id.bottom_sheet_container))
-
         setBottomAppBar()
-
-        input_layout.setEndIconOnClickListener{
-            startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${input_edit_text.text.toString()}")
-            })
-        }
 
     }
 
@@ -108,26 +103,27 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-    }
 
-
+    @SuppressLint("SetJavaScriptEnabled")
     private fun renderData(data: PictureData) {
         when (data) {
             is PictureData.Success -> {
                 val serverResponseData = data.serverResponseData
-                val bottomSheetTextView: TextView = findViewById(R.id.bottom_sheet_text)
-                bottomSheetTextView.text = serverResponseData.explanation
+                collapsing_title.text = serverResponseData.title
+                collapsing_text.text = serverResponseData.explanation
                 val url = serverResponseData.url
                 if (serverResponseData.mediaType == MEDIA_TYPE_IMAGE) {
                     image_view.load(url)
                 } else if (serverResponseData.mediaType == MEDIA_TYPE_VIDEO) {
                     image_view.visibility = View.INVISIBLE
-                    main_video_button.visibility = View.VISIBLE
-                    main_video_button.setOnClickListener {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                    with(video_web_view){
+                        visibility = View.VISIBLE
+                        webViewClient = WebViewClient()
+                        settings.mediaPlaybackRequiresUserGesture = false
+                        settings.javaScriptEnabled = true
+                    }
+                    url?.let {
+                        video_web_view.loadUrl(url)
                     }
                 }
             }

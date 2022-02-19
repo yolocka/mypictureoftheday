@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/setting_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -15,32 +16,32 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/setting_activity_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/active_theme"
-        android:textSize="@dimen/settings_activity_text_size"
-        app:layout_constraintHorizontal_weight="2"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintRight_toLeftOf="@id/active_theme"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        <TextView
+            android:id="@+id/setting_activity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/active_theme"
+            android:textSize="@dimen/settings_activity_text_size"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintRight_toLeftOf="@id/active_theme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/active_theme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:chipBackgroundColor="?colorPrimary"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/setting_activity_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/active_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="?colorPrimary"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/setting_activity_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -51,22 +52,24 @@
         app:layoutDescription="@xml/motion_scene_chips"
         app:layout_constraintTop_toBottomOf="@+id/active_theme_container">
 
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/theme_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:chipBackgroundColor="?colorPrimary"
             android:text="@string/choose_theme"
             app:layout_constraintBottom_toBottomOf="@id/setting_chip_group"
             app:layout_constraintTop_toTopOf="@id/setting_chip_group"
             app:layout_constraintStart_toStartOf="parent"/>
 
+
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/setting_chip_group"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/active_theme_container"
             app:singleSelection="true">
 
@@ -89,6 +92,32 @@
                 android:layout_height="wrap_content"
                 android:text="@string/orange"/>
         </com.google.android.material.chip.ChipGroup>
+
+        <ImageView
+            android:id="@+id/dotted_line_on_settings_activity"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dotted_line_height"
+            android:src="@drawable/dotted"
+            android:layerType="software"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/demo_right_swipe"/>
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/demo_right_swipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutDescription="@xml/motion_scene_swipe_block"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_chip_group">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/right_block"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?colorSecondaryVariant"
+                app:srcCompat="@drawable/ic_baseline_chevron_right_24"/>
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 

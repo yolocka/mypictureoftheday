@@ -7,10 +7,10 @@ import com.example.mypictureoftheday.model.DataLoader
 import com.example.mypictureoftheday.model.PictureData
 import java.time.LocalDate
 
-class TwoDaysAgoFragmentViewModel : ViewModel() {
+class ArchiveFragmentViewModel : ViewModel() {
     private val now: LocalDate = LocalDate.now()
-    fun getData() : LiveData<PictureData> {
-        val yesterday = now.minusDays(2)
+    fun getData(daysBefore: Long) : LiveData<PictureData> {
+        val yesterday = now.minusDays(daysBefore)
         return DataLoader().getData(yesterday)
     }
 }

@@ -5,14 +5,23 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.3234375" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/dotted.xml" value="0.335" />
+        <entry key="app/src/main/res/drawable/ic_baseline_chevron_right_24.xml" value="0.1025" />
+        <entry key="app/src/main/res/drawable/ic_baseline_looks_two_24.xml" value="0.1425" />
+        <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1425" />
+        <entry key="app/src/main/res/drawable/ic_baseline_palette_24.xml" value="0.1425" />
+        <entry key="app/src/main/res/drawable/ic_baseline_palette_240.xml" value="0.1425" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3861538461538462" />
         <entry key="app/src/main/res/font/custom_font.xml" value="0.1648148148148148" />
         <entry key="app/src/main/res/layout/activity_achive.xml" value="0.2109375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_settings_start.xml" value="0.3491847826086957" />
         <entry key="app/src/main/res/layout/bottom_navigation_layout.xml" value="0.121875" />
         <entry key="app/src/main/res/layout/bottom_navigation_view.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/bottom_sheet_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/collapsing_toolbar.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_archive.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/layout/fragment_three_days_ago.xml" value="0.3125" />
         <entry key="app/src/main/res/layout/fragment_two_days_ago.xml" value="0.3125" />
@@ -20,6 +29,7 @@
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.121875" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.17239583333333333" />
         <entry key="app/src/main/res/menu/menu_bottom_navigation_view.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/xml/motion_scene.xml" value="0.3491847826086957" />
       </map>
     </option>
   </component>
