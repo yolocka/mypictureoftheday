@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_navigation_marginStart">8dp</dimen>
+    <dimen name="bottom_navigation_marginTop">8dp</dimen>
+    <dimen name="bottom_navigation_marginEnd">8dp</dimen>
+    <dimen name="bottom_sheet_peekHeight">90dp</dimen>
+    <dimen name="bottom_sheet_line_width">25dp</dimen>
+    <dimen name="bottom_sheet_line_height">1dp</dimen>
+    <dimen name="bottom_sheet_line_marginTop">5dp</dimen>
+    <dimen name="bottom_sheet_headline_marginTop">5dp</dimen>
+    <dimen name="bottom_sheet_headline_paddingHorizontal">10dp</dimen>
+    <dimen name="bottom_sheet_text_marginTop">5dp</dimen>
+    <dimen name="bottom_sheet_text_paddingHorizontal">10dp</dimen>
+</resources>
