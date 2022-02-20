@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mypictureoftheday.R
 import com.example.mypictureoftheday.view.MainActivity.Companion.IS_CHANGED
+import com.example.mypictureoftheday.view.MainActivity.Companion.MINT_THEME
+import com.example.mypictureoftheday.view.MainActivity.Companion.ORANGE_THEME
+import com.example.mypictureoftheday.view.MainActivity.Companion.PLUM_THEME
 import com.example.mypictureoftheday.view.MainActivity.Companion.PREF_THEME
 import com.example.mypictureoftheday.view.MainActivity.Companion.SHAR_PREF_NAME
 import com.google.android.material.chip.Chip
@@ -22,9 +25,9 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         when (sharedPref.getString(PREF_THEME, "")) {
-            "Слива" -> setTheme(R.style.PlumTheme)
-            "Мята" -> setTheme(R.style.MintTheme)
-            "Апельсин" -> setTheme(R.style.OrangeTheme)
+            PLUM_THEME -> setTheme(R.style.PlumTheme)
+            MINT_THEME -> setTheme(R.style.MintTheme)
+            ORANGE_THEME -> setTheme(R.style.OrangeTheme)
         }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)

@@ -9,4 +9,9 @@
     <string name="plum">Слива</string>
     <string name="mint">Мята</string>
     <string name="orange">Апельсин</string>
+    <string name="album">album</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="two_days_ago">Two days ago</string>
+    <string name="three_days_ago">Three days ago</string>
+    <string name="video">VIDEO</string>
 </resources>

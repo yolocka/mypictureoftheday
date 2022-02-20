@@ -3,7 +3,7 @@
     <style name="AppShapeAppearance.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamilyTopLeft">cut</item>
     </style>
-    <style name="plumTextColor" parent="TextAppearance.MaterialComponents.Body1">
+    <style name="plumTextColor" parent="TextAppearance.MaterialComponents.Body2">
         <item name="android:textColor">@color/grey</item>
     </style>
 </resources>
