@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main_activity"
-    android:padding="@dimen/main_app_padding"
     tools:context=".view.MainActivity">
 
     <include layout="@layout/collapsing_toolbar"/>
@@ -16,7 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="?colorPrimary"
+        android:layout_margin="@dimen/bottom_app_bar_margin"
+        android:backgroundTint="?colorPrimarySurface"
+        app:navigationIconTint="?colorOnSecondary"
         app:navigationIcon="@drawable/ic_baseline_menu_24"/>
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>

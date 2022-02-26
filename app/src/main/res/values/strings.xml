@@ -7,12 +7,13 @@
     <string name="first">Первый</string>
     <string name="active_theme">Текущая тема</string>
     <string name="plum">Слива</string>
-    <string name="mint">Мята</string>
-    <string name="orange">Апельсин</string>
+    <string name="mandarin">Мандарин</string>
+    <string name="blueberry">Черника</string>
     <string name="album">album</string>
     <string name="yesterday">Yesterday</string>
     <string name="two_days_ago">Two days ago</string>
     <string name="three_days_ago">Three days ago</string>
     <string name="video">VIDEO</string>
     <string name="choose_theme">Выбрать тему</string>
+    <string name="date">Дата</string>
 </resources>

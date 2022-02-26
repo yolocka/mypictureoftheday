@@ -2,9 +2,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/collapsing_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
+    android:background="@color/grey"
     android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -52,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/tool_bar_text_size"
                     android:lineSpacingExtra="@dimen/tool_bar_line_spacing_extra"
+                    android:fontFamily="@font/eczar_bold"
                     android:textStyle="bold"
                     android:padding="@dimen/main_app_padding"/>
             </androidx.appcompat.widget.Toolbar>
@@ -64,6 +66,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/main_activity_scrolling_line_text_margin"
+        android:padding="@dimen/main_app_padding"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <TextView
@@ -71,16 +75,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/main_activity_scrolling_text_size"
+            android:fontFamily="@font/eczar_regular"
             android:lineSpacingExtra="@dimen/main_activity_scrolling_line_spacing_extra"
-            android:text="@string/download"
-            android:padding="@dimen/main_app_padding"/>
+            android:text="@string/download"/>
     </androidx.core.widget.NestedScrollView>
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/my_fab"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_margin="@dimen/bottom_navigation_marginStart"
-        android:src="@drawable/ic_baseline_looks_3_24"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_baseline_done_24"
         app:layout_anchor="@id/main_appbar"
-        app:layout_anchorGravity="bottom|right|end"/>-->
+        app:layout_anchorGravity="bottom|right|end"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FF7953D2</color>
-    <color name="purple_500">#FF4527A0</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="lightcyan">#FF000070</color>
-    <color name="paleturquoise">#FFB2DFDB</color>
-    <color name="powderblue">#FF82ADA9</color>
-    <color name="hotpink">#FFFF77A9</color>
-    <color name="deeppink">#FFEC407A</color>
-    <color name="mediumvioletred">#FFB4004E</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="purple_200">#FF666ad1</color>
+    <color name="purple_500">#FF303f9f</color>
+    <color name="purple_700">#FF001970</color>
+    <color name="primaryGreen">#FF00796b</color>
+    <color name="primaryGreenDark">#FF004c40</color>
+    <color name="primaryGreenLight">#FF48a999</color>
+    <color name="secondaryOrange">#FFef6c00</color>
+    <color name="secondaryOrangeDark">#FFb53d00</color>
+    <color name="secondaryOrangeLight">#FFff9d3f</color>
+    <color name="secondaryYellow">#FFffee58</color>
+    <color name="secondaryYellowLight">#FFffff8b</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="yellow">#FFFFF64F</color>
-    <color name="orange">#FFFFC400</color>
-    <color name="darkgoldenrod">#FFC79400</color>
-    <color name="teal_300">#FF4DD0E1</color>
-    <color name="teal_900">#FF009FAF</color>
+    <color name="primaryBlue">#FF01579b</color>
+    <color name="primaryBlueDark">#FF002f6c</color>
+    <color name="primaryBlueLight">#FF4f83cc</color>
+    <color name="secondaryRed">#FFd50000</color>
+    <color name="secondaryRedLight">#FFff5131</color>
     <color name="grey">#FFE0E0E0</color>
 </resources>
