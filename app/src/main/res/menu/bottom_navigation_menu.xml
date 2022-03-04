@@ -3,5 +3,5 @@
     <item
         android:id="@+id/first_item"
         android:icon="@drawable/ic_first"
-        android:title="@string/first" />
+        android:title="@string/to_do_list" />
 </menu>

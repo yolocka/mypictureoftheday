@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 import android.webkit.WebViewClient
-import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
@@ -21,14 +20,12 @@ import com.example.mypictureoftheday.R
 import com.example.mypictureoftheday.model.PictureData
 import com.example.mypictureoftheday.view.archive.ArchiveActivity
 import com.example.mypictureoftheday.viewmodel.MainViewModel
-import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.collapsing_toolbar.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
-    private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private val sharedPref: SharedPreferences by lazy {
         getSharedPreferences(SHAR_PREF_NAME, Context.MODE_PRIVATE)
     }
