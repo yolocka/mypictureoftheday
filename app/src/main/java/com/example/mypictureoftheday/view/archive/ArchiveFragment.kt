@@ -1,16 +1,13 @@
 package com.example.mypictureoftheday.view.archive
 
-import android.annotation.TargetApi
-import android.os.Build
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.PermissionRequest
-import android.webkit.WebChromeClient
 import android.webkit.WebViewClient
-import android.widget.TextView
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.lifecycle.ViewModelProvider
 import com.example.mypictureoftheday.R
 import com.example.mypictureoftheday.model.PictureData

@@ -4,7 +4,7 @@
     <string name="wiki_helper_text">Найдите термин в Википедии</string>
     <string name="download">Download</string>
     <string name="settings">Настойки</string>
-    <string name="first">Первый</string>
+    <string name="to_do_list">Список дел</string>
     <string name="active_theme">Текущая тема</string>
     <string name="plum">Слива</string>
     <string name="mandarin">Мандарин</string>
@@ -16,4 +16,5 @@
     <string name="video">VIDEO</string>
     <string name="choose_theme">Выбрать тему</string>
     <string name="date">Дата</string>
+    <string name="enter_new_case">Добавьте заметку</string>
 </resources>

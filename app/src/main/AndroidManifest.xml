@@ -5,13 +5,17 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
+        android:name=".view.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/MandarinTheme">
+        android:theme="@style/BlueberryTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".view.todolist.ToDoListActivity"
+            android:exported="false" />
         <activity
             android:name=".view.archive.ArchiveActivity"
             android:exported="false" />
