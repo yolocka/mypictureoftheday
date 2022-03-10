@@ -30,7 +30,13 @@ class SettingsActivity : AppCompatActivity() {
             ORANGE_THEME -> setTheme(R.style.OrangeTheme)
         }
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+        setContentView(R.layout.activity_settings_start)
+
+        when (sharedPref.getString(PREF_THEME, "")) {
+            PLUM_THEME -> active_theme.text = resources.getString(R.string.plum)
+            MINT_THEME -> active_theme.text = resources.getString(R.string.mint)
+            ORANGE_THEME -> active_theme.text = resources.getString(R.string.orange)
+        }
 
         setting_chip_group.setOnCheckedChangeListener { setting_chip_group, possition ->
             setting_chip_group.findViewById<Chip>(possition)?.let {
