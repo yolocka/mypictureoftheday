@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/todo_item"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="@dimen/to_do_item_height">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/todo_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/eczar"
+        android:textSize="@dimen/to_do_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -16,11 +18,10 @@
         android:id="@+id/removeItemImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/remove_item_button_margin"
-        android:layout_marginVertical="@dimen/remove_item_button_vertical_margin"
+        android:layout_marginHorizontal="@dimen/remove_item_button_margin"
         android:tint="@color/design_default_color_error"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/ic_baseline_remove_24" />
 
     <androidx.appcompat.widget.AppCompatImageView

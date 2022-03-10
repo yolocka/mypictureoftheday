@@ -25,7 +25,7 @@
             app:contentScrim="?attr/colorPrimary"
             app:toolbarId="@id/main_toolbar">
 
-            <com.example.mypictureoftheday.view.MyImageView
+            <com.example.mypictureoftheday.view.pod.MainImageView
                 android:id="@+id/image_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -47,15 +47,16 @@
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="bottom"
                 app:layout_collapseMode="pin">
+
                 <TextView
                     android:id="@+id/collapsing_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/tool_bar_text_size"
-                    android:lineSpacingExtra="@dimen/tool_bar_line_spacing_extra"
                     android:fontFamily="@font/eczar_bold"
-                    android:textStyle="bold"
-                    android:padding="@dimen/main_app_padding"/>
+                    android:lineSpacingExtra="@dimen/tool_bar_line_spacing_extra"
+                    android:padding="@dimen/main_app_padding"
+                    android:textSize="@dimen/tool_bar_text_size"
+                    android:textStyle="bold" />
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -74,10 +75,10 @@
             android:id="@+id/collapsing_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/main_activity_scrolling_text_size"
-            android:fontFamily="@font/eczar_regular"
+            android:fontFamily="@font/eczar"
             android:lineSpacingExtra="@dimen/main_activity_scrolling_line_spacing_extra"
-            android:text="@string/download"/>
+            android:text="@string/download"
+            android:textSize="@dimen/main_activity_scrolling_text_size" />
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

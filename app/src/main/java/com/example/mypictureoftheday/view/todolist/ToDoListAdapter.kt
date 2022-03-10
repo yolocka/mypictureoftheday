@@ -1,17 +1,20 @@
 package com.example.mypictureoftheday.view.todolist
 
+import android.graphics.Color
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mypictureoftheday.R
-import com.example.mypictureoftheday.model.LocalRepository
-import com.example.mypictureoftheday.model.LocalRepositoryImpl
-import com.example.mypictureoftheday.model.ToDoData
+import com.example.mypictureoftheday.model.db.LocalRepository
+import com.example.mypictureoftheday.model.db.LocalRepositoryImpl
+import com.example.mypictureoftheday.model.db.ToDoData
 import com.example.mypictureoftheday.view.App
-import com.example.mypictureoftheday.viewmodel.ToDoViewModel
 import kotlinx.android.synthetic.main.todo_item.view.*
 import kotlinx.android.synthetic.main.todo_item_edit.view.*
 
@@ -41,7 +44,12 @@ class ToDoListAdapter(
     inner class TextViewHolder(view: View) : BaseViewHolder(view) {
         override fun bind(data: Pair<String, Boolean>) {
             itemView.apply {
-                findViewById<AppCompatTextView>(R.id.todo_text_view).text = data.first
+                val spannableItemText = SpannableString(data.first)
+                spannableItemText.setSpan(
+                    ForegroundColorSpan(Color.RED),
+                    0, 1,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                findViewById<AppCompatTextView>(R.id.todo_text_view).setText(spannableItemText, TextView.BufferType.SPANNABLE)
                 removeItemImageView.setOnClickListener {
                     localRepo.deleteEntity(data.first)
                     removeItem(layoutPosition)
