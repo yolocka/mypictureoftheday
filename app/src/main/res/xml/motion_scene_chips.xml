@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:motion="http://schemas.android.com/apk/res-auto">
     <Transition
-        motion:constraintSetEnd="@layout/activity_settings"
+        motion:constraintSetEnd="@layout/activity_settings_end_for_chips_animation"
         motion:constraintSetStart="@layout/activity_settings_start"
         motion:duration="1000"
         >

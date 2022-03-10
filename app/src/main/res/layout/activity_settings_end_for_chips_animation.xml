@@ -15,32 +15,47 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/setting_activity_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/active_theme"
-        android:textSize="@dimen/settings_activity_text_size"
-        app:layout_constraintHorizontal_weight="2"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintRight_toLeftOf="@id/active_theme"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        <TextView
+            android:id="@+id/setting_activity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/active_theme"
+            android:textSize="@dimen/settings_activity_text_size"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintRight_toLeftOf="@id/active_theme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/active_theme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:chipBackgroundColor="?colorPrimary"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/setting_activity_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/active_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="?colorPrimary"
+            app:srcCompat="@drawable/ic_baseline_circle_24"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/setting_activity_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/active_theme_secondaryColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="?colorSecondary"
+            app:srcCompat="@drawable/ic_baseline_circle_24"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/setting_activity_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -81,13 +96,13 @@
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mint"/>
+                android:text="@string/mandarin"/>
 
             <com.google.android.material.chip.Chip
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/orange"/>
+                android:text="@string/blueberry"/>
         </com.google.android.material.chip.ChipGroup>
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
