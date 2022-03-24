@@ -24,7 +24,7 @@ class ArchiveActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        when (sharedPref.getString(MainActivity.PREF_THEME, "")) {
+        when (sharedPref.getString(MainActivity.PREF_THEME, "Черника")) {
             PLUM_THEME -> setTheme(R.style.PlumTheme)
             MANDARIN_THEME -> setTheme(R.style.MandarinTheme)
             BLUEBERRY_THEME -> setTheme(R.style.BlueberryTheme)

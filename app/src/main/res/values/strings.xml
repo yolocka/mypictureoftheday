@@ -2,7 +2,7 @@
     <string name="app_name">MyPictureOfTheDay</string>
     <string name="search_wiki">Найти в Википедии</string>
     <string name="wiki_helper_text">Найдите термин в Википедии</string>
-    <string name="download">Download</string>
+    <string name="download">Downloading…</string>
     <string name="settings">Настойки</string>
     <string name="to_do_list">Список дел</string>
     <string name="active_theme">Текущая тема</string>

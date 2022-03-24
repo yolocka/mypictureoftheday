@@ -26,7 +26,7 @@ class ToDoListActivity : AppCompatActivity() {
     private var isEditTextVisible: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        when (sharedPref.getString(MainActivity.PREF_THEME, "")) {
+        when (sharedPref.getString(MainActivity.PREF_THEME, "Черника")) {
             MainActivity.PLUM_THEME -> setTheme(R.style.PlumTheme)
             MainActivity.MANDARIN_THEME -> setTheme(R.style.MandarinTheme)
             MainActivity.BLUEBERRY_THEME -> setTheme(R.style.BlueberryTheme)

@@ -29,7 +29,7 @@ class SettingsActivity : AppCompatActivity() {
     private var isDateShowing = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        when (sharedPref.getString(PREF_THEME, "")) {
+        when (sharedPref.getString(PREF_THEME, "Черника")) {
             PLUM_THEME -> setTheme(R.style.PlumTheme)
             MANDARIN_THEME -> setTheme(R.style.MandarinTheme)
             BLUEBERRY_THEME -> setTheme(R.style.BlueberryTheme)
