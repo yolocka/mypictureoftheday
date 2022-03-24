@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_new_case"
+        android:visibility="gone"
         app:endIconMode="custom"
         app:endIconDrawable="@drawable/ic_baseline_done_24"
         app:endIconCheckable="true"

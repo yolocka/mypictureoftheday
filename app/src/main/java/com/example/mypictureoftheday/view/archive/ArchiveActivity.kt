@@ -5,10 +5,10 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mypictureoftheday.R
-import com.example.mypictureoftheday.view.MainActivity
-import com.example.mypictureoftheday.view.MainActivity.Companion.MANDARIN_THEME
-import com.example.mypictureoftheday.view.MainActivity.Companion.BLUEBERRY_THEME
-import com.example.mypictureoftheday.view.MainActivity.Companion.PLUM_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.MANDARIN_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.BLUEBERRY_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.PLUM_THEME
 import kotlinx.android.synthetic.main.activity_achive.*
 
 class ArchiveActivity : AppCompatActivity() {

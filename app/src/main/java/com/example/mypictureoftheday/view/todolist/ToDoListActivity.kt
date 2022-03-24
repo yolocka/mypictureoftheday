@@ -4,15 +4,16 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mypictureoftheday.R
-import com.example.mypictureoftheday.model.ToDoData
-import com.example.mypictureoftheday.view.MainActivity
+import com.example.mypictureoftheday.model.db.ToDoData
+import com.example.mypictureoftheday.view.pod.MainActivity
 import com.example.mypictureoftheday.viewmodel.ToDoViewModel
 import kotlinx.android.synthetic.main.activity_to_do_list.*
+import kotlinx.android.synthetic.main.todo_item_edit.*
 
 class ToDoListActivity : AppCompatActivity() {
 
@@ -22,6 +23,7 @@ class ToDoListActivity : AppCompatActivity() {
     private val viewModel: ToDoViewModel by lazy {
         ViewModelProvider(this).get(ToDoViewModel::class.java)
     }
+    private var isEditTextVisible: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         when (sharedPref.getString(MainActivity.PREF_THEME, "")) {
@@ -51,5 +53,15 @@ class ToDoListActivity : AppCompatActivity() {
         recyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
 
         recyclerView.adapter = adapter
+
+        toDoFab.setOnClickListener {
+            if (isEditTextVisible) {
+                todo_edit_text.visibility = View.GONE
+                isEditTextVisible = false
+            } else {
+                todo_edit_text.visibility = View.VISIBLE
+                isEditTextVisible = true
+            }
+        }
     }
 }
