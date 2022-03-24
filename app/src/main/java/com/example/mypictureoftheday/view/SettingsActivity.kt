@@ -8,12 +8,12 @@ import android.transition.ChangeBounds
 import android.transition.TransitionManager
 import androidx.constraintlayout.widget.ConstraintSet
 import com.example.mypictureoftheday.R
-import com.example.mypictureoftheday.view.MainActivity.Companion.IS_CHANGED
-import com.example.mypictureoftheday.view.MainActivity.Companion.MANDARIN_THEME
-import com.example.mypictureoftheday.view.MainActivity.Companion.BLUEBERRY_THEME
-import com.example.mypictureoftheday.view.MainActivity.Companion.PLUM_THEME
-import com.example.mypictureoftheday.view.MainActivity.Companion.PREF_THEME
-import com.example.mypictureoftheday.view.MainActivity.Companion.SHAR_PREF_NAME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.IS_CHANGED
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.MANDARIN_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.BLUEBERRY_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.PLUM_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.PREF_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.SHAR_PREF_NAME
 import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.activity_settings_start.*
 import java.time.LocalDate
@@ -29,7 +29,7 @@ class SettingsActivity : AppCompatActivity() {
     private var isDateShowing = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        when (sharedPref.getString(PREF_THEME, "")) {
+        when (sharedPref.getString(PREF_THEME, "Черника")) {
             PLUM_THEME -> setTheme(R.style.PlumTheme)
             MANDARIN_THEME -> setTheme(R.style.MandarinTheme)
             BLUEBERRY_THEME -> setTheme(R.style.BlueberryTheme)

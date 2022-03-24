@@ -1,19 +1,17 @@
 package com.example.mypictureoftheday.view.archive
 
 import android.os.Bundle
-import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.lifecycle.ViewModelProvider
 import com.example.mypictureoftheday.R
 import com.example.mypictureoftheday.model.PictureData
 import androidx.lifecycle.Observer
 import coil.load
-import com.example.mypictureoftheday.view.MainActivity
+import com.example.mypictureoftheday.view.pod.MainActivity
 import com.example.mypictureoftheday.viewmodel.ArchiveFragmentViewModel
 import kotlinx.android.synthetic.main.collapsing_toolbar.*
 

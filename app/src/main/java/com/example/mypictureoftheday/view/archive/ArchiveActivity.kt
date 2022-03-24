@@ -5,10 +5,10 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mypictureoftheday.R
-import com.example.mypictureoftheday.view.MainActivity
-import com.example.mypictureoftheday.view.MainActivity.Companion.MANDARIN_THEME
-import com.example.mypictureoftheday.view.MainActivity.Companion.BLUEBERRY_THEME
-import com.example.mypictureoftheday.view.MainActivity.Companion.PLUM_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.MANDARIN_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.BLUEBERRY_THEME
+import com.example.mypictureoftheday.view.pod.MainActivity.Companion.PLUM_THEME
 import kotlinx.android.synthetic.main.activity_achive.*
 
 class ArchiveActivity : AppCompatActivity() {
@@ -24,7 +24,7 @@ class ArchiveActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        when (sharedPref.getString(MainActivity.PREF_THEME, "")) {
+        when (sharedPref.getString(MainActivity.PREF_THEME, "Черника")) {
             PLUM_THEME -> setTheme(R.style.PlumTheme)
             MANDARIN_THEME -> setTheme(R.style.MandarinTheme)
             BLUEBERRY_THEME -> setTheme(R.style.BlueberryTheme)

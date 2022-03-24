@@ -18,5 +18,6 @@
     <color name="primaryBlueLight">#FF4f83cc</color>
     <color name="secondaryRed">#FFd50000</color>
     <color name="secondaryRedLight">#FFff5131</color>
-    <color name="grey">#FFE0E0E0</color>
+    <color name="grey">#CCFFFFFF</color>
+    <color name="greyForFrame">#21000000</color>
 </resources>

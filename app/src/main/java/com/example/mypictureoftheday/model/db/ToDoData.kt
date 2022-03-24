@@ -1,4 +1,4 @@
-package com.example.mypictureoftheday.model
+package com.example.mypictureoftheday.model.db
 
 data class ToDoData (
     val toDoItem: String = "",

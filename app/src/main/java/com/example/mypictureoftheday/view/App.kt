@@ -2,8 +2,8 @@ package com.example.mypictureoftheday.view
 
 import android.app.Application
 import androidx.room.Room
-import com.example.mypictureoftheday.model.ToDoDAO
-import com.example.mypictureoftheday.model.ToDoDataBase
+import com.example.mypictureoftheday.model.db.ToDoDAO
+import com.example.mypictureoftheday.model.db.ToDoDataBase
 import java.lang.Exception
 
 class App: Application() {

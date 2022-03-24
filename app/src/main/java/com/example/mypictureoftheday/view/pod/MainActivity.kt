@@ -1,15 +1,19 @@
-package com.example.mypictureoftheday.view
+package com.example.mypictureoftheday.view.pod
 
 import android.annotation.SuppressLint
 import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.*
 import android.webkit.WebViewClient
-import androidx.constraintlayout.widget.ConstraintLayout
+import android.widget.TextView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
@@ -18,9 +22,9 @@ import androidx.transition.*
 import coil.load
 import com.example.mypictureoftheday.R
 import com.example.mypictureoftheday.model.PictureData
+import com.example.mypictureoftheday.view.SettingsActivity
 import com.example.mypictureoftheday.view.archive.ArchiveActivity
 import com.example.mypictureoftheday.viewmodel.MainViewModel
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.collapsing_toolbar.*
 
@@ -48,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        when (sharedPref.getString(PREF_THEME, "")) {
+        when (sharedPref.getString(PREF_THEME, "Черника")) {
             PLUM_THEME -> setTheme(R.style.PlumTheme)
             MANDARIN_THEME -> setTheme(R.style.MandarinTheme)
             BLUEBERRY_THEME -> setTheme(R.style.BlueberryTheme)
@@ -126,7 +130,12 @@ class MainActivity : AppCompatActivity() {
         when (data) {
             is PictureData.Success -> {
                 val serverResponseData = data.serverResponseData
-                collapsing_title.text = serverResponseData.title
+                val spannableTitle = SpannableString(serverResponseData.title)
+                spannableTitle.setSpan(
+                    ForegroundColorSpan(Color.RED),
+                    0, 1,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                collapsing_title.setText(spannableTitle, TextView.BufferType.SPANNABLE)
                 collapsing_text.text = serverResponseData.explanation
                 val url = serverResponseData.url
                 if (serverResponseData.mediaType == MEDIA_TYPE_IMAGE) {

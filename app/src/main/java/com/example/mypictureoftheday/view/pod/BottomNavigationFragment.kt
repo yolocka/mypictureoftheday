@@ -1,12 +1,10 @@
-package com.example.mypictureoftheday.view
+package com.example.mypictureoftheday.view.pod
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.example.mypictureoftheday.R
 import com.example.mypictureoftheday.view.todolist.ToDoListActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
